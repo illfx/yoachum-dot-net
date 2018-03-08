@@ -29,18 +29,22 @@ Route::post(
     '/contact', function(Request $request){
     $validator = Validator::make($request->all(), [
         'email' => 'required|email',
-        'subject' => 'required',
-        'message' => 'required',
+        'topic' => 'required',
+        'content' => 'required',
     ]);
     if($validator->passes())
     {
-        $email = new DirectMessage($request->input('email'), $request->input('subject'), $request->input('message'));
-        Mail::to(env('APP_DM_RECIPIENT'))->send($email);
+        $email = new DirectMessage($request->input('email'), $request->input('topic'), $request->input('content'));
+
+        Mail::to(   env('APP_DM_RECIPIENT')   )->send($email);
+
+
         return redirect('/contact')->withSuccess('<strong>Great</strong> I will respond shortly, thanks.');
+
+
     }
     return redirect('/contact')->withErrors($validator)->withInput();
 })->middleware('recaptcha');
-
 
 Route::get('/resume', function(){
     return view('resume');

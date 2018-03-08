@@ -64,26 +64,26 @@
                             @endif
                         </div>
 
-                        <div class="form-group @if($errors->has('subject')) has-error @endif">
+                        <div class="form-group @if($errors->has('topic')) has-error @endif">
                             {{--<label for="subject">Subject</label>--}}
-                            <select id="subject" name="subject" class="form-control @if($errors->has('subject')) is-invalid @endif" required="required">
+                            <select id="subject" name="topic" class="form-control @if($errors->has('topic')) is-invalid @endif" required="required">
                                 <option value="" disabled="disabled" selected="selected" hidden="hidden">Select a subject...</option>
                                 <option value="recruiter">Recruiter</option>
                                 <option value="legal">Copyright Information</option>
                             </select>
-                            @if($errors->has('subject'))
+                            @if($errors->has('topic'))
                                 <div class="invalid-feedback">
-                                    {{ $errors->first('subject') }}
+                                    {{ $errors->first('topic') }}
                                 </div>
                             @endif
                         </div>
 
                         <div class="form-group">
                             {{--<label for="message">Message</label>--}}
-                            <textarea id="message" name="message" class="form-control @if($errors->has('message')) is-invalid @endif" rows="3" required="required" placeholder="Type a message...">{{ old('message') }}</textarea>
-                            @if($errors->has('message'))
+                            <textarea id="message" name="content" class="form-control @if($errors->has('content')) is-invalid @endif" rows="3" required="required" placeholder="Type a message...">{{ old('message') }}</textarea>
+                            @if($errors->has('content'))
                                 <div class="invalid-feedback">
-                                    {{ $errors->first('message') }}
+                                    {{ $errors->first('content') }}
                                 </div>
                             @endif
                         </div>

@@ -19,25 +19,28 @@ class DirectMessage extends Mailable
     /**
      * @var string
      */
-    public $subject;
+    public $topic;
 
     /**
      * @var string
      */
     public $content;
 
+//    public $_addr="";
+
     /**
      * Create a new message instance.
      *
      * @param $sender string
-     * @param $subject string
-     * @param $message string
+     * @param $topic string
+     * @param $content string
      */
-    public function __construct($sender, $subject, $message)
+    public function __construct($sender, $topic, $content)
     {
+//        $this->replyTo = $sender;
         $this->sender = $sender;
-        $this->subject = $subject;
-        $this->content = $message;
+        $this->topic = $topic;
+        $this->content = $content;
     }
 
     /**
@@ -50,7 +53,7 @@ class DirectMessage extends Mailable
         // PLAIN TEXT:   $this->view('view.email')->text('emails.orders.shipped_plain');
         // MODIFYING FROM:  $this->from('box@server.com')->view('view.email')
         return $this
-            ->view('emails.contact.direct-message')
+            ->view('emails.contact.direct-message')->replyTo($this->sender);
 //            ->with([
 //                'email'   => $this->sender,
 //                'subject' => $this->subject,
