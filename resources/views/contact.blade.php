@@ -32,7 +32,7 @@
                 <div class="col-lg-6">
                     <h4>Direct Message</h4>
                     <p>
-                        <b>Send me a DM using the form below</b>
+                        <b>Send me a DM using this form</b>
                     </p>
                     <form name="dm" action="/contact" method="post">
                         {{ csrf_field() }}

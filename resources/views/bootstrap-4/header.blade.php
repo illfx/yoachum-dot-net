@@ -11,13 +11,11 @@
                 {{--<li class="nav-item{% if ( nav === 'home' ) === '/' %} active{% endif %}">--}}
                     {{--<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>--}}
                     {{--</li>--}}
-                <li class="nav-item">
-                    <a class="nav-link" href="/resume">Resume</a>
-                </li>
-
-                <li>
-                    <a class="nav-link" href="/contact">Contact</a>
-                </li>
+                @foreach($navItems as $item)
+                    <li class="nav-item">
+                        <a class="nav-link @if($item['active']) active @endif" href="{{ $item['url'] }}">{{ $item['name'] }}</a>
+                    </li>
+                @endforeach
                 {{--<li>--}}
                     {{--<a class="nav-link{% if ( nav === 'socket.io' ) %} active{% endif %}" href="/socket.io">Socket.IO</a>--}}
                     {{--</li>--}}

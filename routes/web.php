@@ -19,14 +19,13 @@ use App\Mail\DirectMessage;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('home');
 
 Route::get('/contact', function() {
     return view('contact');
-});
+})->name('contact');
 
-Route::post(
-    '/contact', function(Request $request){
+Route::post('/contact', function(Request $request){
     $validator = Validator::make($request->all(), [
         'email' => 'required|email',
         'topic' => 'required',
@@ -35,17 +34,12 @@ Route::post(
     if($validator->passes())
     {
         $email = new DirectMessage($request->input('email'), $request->input('topic'), $request->input('content'));
-
         Mail::to(   env('APP_DM_RECIPIENT')   )->send($email);
-
-
         return redirect('/contact')->withSuccess('<strong>Great</strong> I will respond shortly, thanks.');
-
-
     }
     return redirect('/contact')->withErrors($validator)->withInput();
 })->middleware('recaptcha');
 
-Route::get('/resume', function(){
-    return view('resume');
-});
+//Route::get('/blog', function(){
+//    return view('blog');
+//})->name('blog');
