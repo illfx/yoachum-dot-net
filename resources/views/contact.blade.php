@@ -1,17 +1,4 @@
 @extends('bootstrap-4.template')
-@section('style')
-<style>
-    #g-recaptcha-response {
-        display: block !important;
-        position: absolute;
-        margin: -78px 0 0 0 !important;
-        width: 302px !important;
-        height: 76px !important;
-        z-index: -999999;
-        opacity: 0;
-    }
-</style>
-@endsection
 
 @section('content')
 <div class="container">
@@ -56,7 +43,14 @@
                         @endif
                         <div class="form-group">
                             {{--<label for="email">Email</label>--}}
-                            <input id="email" name="email" type="email" class="form-control @if($errors->has('email')) is-invalid @endif" value="{{ old('email') }}" required="required" placeholder="Your email" />
+                            <input id="email"
+                                   name="email"
+                                   type="email"
+                                   class="form-control @if($errors->has('email')) is-invalid @endif"
+                                   value="{{ old('email') }}"
+                                   required="required"
+                                   placeholder="Your email"
+                            />
                             @if($errors->has('email'))
                                 <div class="invalid-feedback">
                                     {{ $errors->first('email') }}
@@ -66,8 +60,14 @@
 
                         <div class="form-group @if($errors->has('topic')) has-error @endif">
                             {{--<label for="subject">Subject</label>--}}
-                            <select id="subject" name="topic" class="form-control @if($errors->has('topic')) is-invalid @endif" required="required">
-                                <option value="" disabled="disabled" selected="selected" hidden="hidden">Select a subject...</option>
+                            <select id="subject"
+                                    name="topic"
+                                    class="form-control @if($errors->has('topic')) is-invalid @endif"
+                                    required="required"
+                            >
+                                <option value="" disabled="disabled" selected="selected" hidden="hidden">
+                                    Select a topic...
+                                </option>
                                 <option value="recruiter">Recruiter</option>
                                 <option value="legal">Copyright Information</option>
                             </select>
@@ -80,7 +80,13 @@
 
                         <div class="form-group">
                             {{--<label for="message">Message</label>--}}
-                            <textarea id="message" name="content" class="form-control @if($errors->has('content')) is-invalid @endif" rows="3" required="required" placeholder="Type a message...">{{ old('message') }}</textarea>
+                            <textarea id="message"
+                                      name="content"
+                                      class="form-control @if($errors->has('content')) is-invalid @endif"
+                                      rows="3"
+                                      required="required"
+                                      placeholder="Type a message..."
+                            >{{ old('content') }}</textarea>
                             @if($errors->has('content'))
                                 <div class="invalid-feedback">
                                     {{ $errors->first('content') }}
@@ -89,10 +95,7 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="g-recaptcha" data-callback="reCaptchaCheckHandler" data-sitekey="6LdNmxsTAAAAAAgIfZcIctB4ehvAYPnh3ykpKcqn"></div>
-                            <div class="invalid-feedback">
-                                Please verify you're human.
-                            </div>
+                            <div class="g-recaptcha" data-sitekey="6LdNmxsTAAAAAAgIfZcIctB4ehvAYPnh3ykpKcqn"></div>
                         </div>
 
                         <div class="form-group">
@@ -117,29 +120,13 @@
 @endsection
 
 @section('script')
-<script src='https://www.google.com/recaptcha/api.js'></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
 <script>
-    var reCaptchaChecked = false;
     $(function(){
         var $recaptcha = document.querySelector('#g-recaptcha-response');
         if($recaptcha) {
             $recaptcha.setAttribute("required", "required");
         }
-
-        $('button.btn-link').on('click', function(event) {
-            alert(this.value);
-        });
-
-        // $(document.forms['dm']).on('submit', function(){
-        //     if(reCaptchaChecked === false)
-        //     {
-        //
-        //     }
-        // });
-
-        function reCaptchaCheckHandler(){
-            reCaptchaChecked = true;
-        }
-    })
+    });
 </script>
 @endsection
