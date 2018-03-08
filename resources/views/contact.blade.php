@@ -117,10 +117,11 @@
             </div>
         </div>
     </div>
+</div>
 @endsection
 
 @section('script')
-        <script src='https://www.google.com/recaptcha/api.js'></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <script>
     $(function(){
         var $recaptcha = document.querySelector('#g-recaptcha-response');
