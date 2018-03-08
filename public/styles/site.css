@@ -1,0 +1,26 @@
+html, body {
+    height: 100%;
+}
+
+.sy-wrap {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sy-content {
+    display:flex;
+    flex-grow: 2;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.social-media-strip {
+    font-size: 48px;
+    text-align: center;
+}
+
+.social-media-strip a {
+    color: inherit;
+    text-decoration: none;
+}
