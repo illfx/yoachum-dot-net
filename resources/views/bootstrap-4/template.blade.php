@@ -36,16 +36,14 @@
     </script>
     <!-- End Google Analytics -->
     @endif
-    @section('style')
-    @endsection
+    @yield('style')
 </head>
 <body>
 <div class="sy-wrap">
     @include('bootstrap-4.header')
 
     <div class="sy-content">
-        @section('content')
-        @endsection
+        @yield('content')
     </div>
     @include('bootstrap-4.footer')
 </div>
@@ -68,7 +66,7 @@
 
 <script src="/scripts/holder.js"></script>
 
-@section('script')
-@endsection
+
+@yield('script')
 
 </html>
