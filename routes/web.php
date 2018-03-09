@@ -19,7 +19,7 @@ use App\Mail\DirectMessage;
 
 Route::get('/', function () {
     return view('index');
-})->name('home');
+})->name('index');
 
 Route::get('/contact', function() {
     return view('contact');
@@ -43,3 +43,6 @@ Route::post('/contact', function(Request $request){
 //Route::get('/blog', function(){
 //    return view('blog');
 //})->name('blog');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
