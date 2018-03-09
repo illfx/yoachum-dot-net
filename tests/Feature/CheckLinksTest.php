@@ -35,4 +35,11 @@ class CheckLinksTest extends TestCase
         $this->assertEquals(200, $response->status());
     }
 
+    public function testRegisterRoute()
+    {
+        $response = $this->call('GET', '/register');
+        $response->assertStatus(404);
+//        $this->assertEquals(404, $response->status());
+    }
+
 }
