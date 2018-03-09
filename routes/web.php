@@ -19,7 +19,7 @@ use App\Mail\DirectMessage;
 
 Route::get('/', function () {
     return view('index');
-})->name('home');
+})->name('index');
 
 Route::get('/contact', function() {
     return view('contact');
@@ -40,6 +40,9 @@ Route::post('/contact', function(Request $request){
     return redirect('/contact')->withErrors($validator)->withInput();
 })->middleware('recaptcha');
 
-//Route::get('/blog', function(){
-//    return view('blog');
-//})->name('blog');
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout');
+
+Route::get('/home', 'HomeController@index')->name('home');
