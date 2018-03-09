@@ -29,7 +29,7 @@ class CheckLinksTest extends TestCase
      *
      * @return void
      */
-    public function testHomeRoute()
+    public function testIndexRoute()
     {
         $response = $this->call('GET', '/');
         $this->assertEquals(200, $response->status());
