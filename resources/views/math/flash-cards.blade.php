@@ -24,7 +24,7 @@
                                 <div id="psy-eq-upper" class="psy-eq-upper">&nbsp;</div>
                                 <div id="psy-eq-lower" class="psy-eq-lower">&nbsp;</div>
                                 <div id="psy-operator" class="psy-operator">&times;</div>
-                                <div id="psy-answer" class="psy-answer">&nbsp;</div>[]
+                                <div id="psy-answer" class="psy-answer">&nbsp;</div>
                             </div>
                         </div>
                     </div>
