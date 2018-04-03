@@ -2,6 +2,10 @@ html, body {
     height: 100%;
 }
 
+article pre {
+    font-size: 100% !important;
+}
+
 .sy-wrap {
     min-height: 100%;
     display: flex;
@@ -14,6 +18,22 @@ html, body {
     flex-direction: column;
     padding-top: 10px;
 }
+
+.psy-article header {
+    margin-bottom: 25px;
+}
+
+/*@media (min-width: 992px)*/
+/*{*/
+    /*.navbar-expand-lg .navbar-nav .dropdown-menu-right {*/
+        /*right: 0;*/
+        /*left: auto;*/
+    /*}*/
+
+    /*.navbar-expand-lg .navbar-nav .dropdown-menu-right .dropdown-item {*/
+        /*text-align: right;*/
+    /*}*/
+/*}*/
 
 .social-media-strip {
     font-size: 48px;
@@ -33,4 +53,76 @@ html, body {
     height: 76px !important;
     z-index: -999999;
     opacity: 0;
+}
+
+.btn {
+    border-color:       #343a40 !important;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    background-color:   #343a40 !important;
+    border-color:       #343a40 !important;
+    color:              rgba(255,255,255,.75) !important;
+}
+
+.btn-primary:hover {
+    color: #fff !important;
+}
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:visited,
+.btn-secondary:focus {
+    color:              #343a40 !important;
+    background-color:   #fff !important;
+}
+
+.btn-secondary:hover {
+    color: #fff !important;
+    background-color: #343a40 !important;
+}
+
+.nav-item > .btn-link {
+    color: inherit;
+}
+
+.navbar .dropdown-menu {
+    background-color: #343a40 !important;
+    border: none;
+}
+
+.navbar .dropdown-menu, .navbar .dropdown-menu:hover  {
+    background-color: #343a40 !important;
+    border: none;
+}
+
+.navbar .dropdown-item {
+    background-color: inherit !important;
+}
+
+.navbar .dropdown-item:hover {
+    color: white !important;
+}
+
+.dropdown-submenu {
+ position: relative;
+}
+
+.dropdown-submenu a::after {
+    transform: rotate(90deg);
+    position: absolute;
+    left: 6px;
+    top: .8em;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: -100%;
+    margin-left: .1rem;
+    margin-right: .1rem;
 }

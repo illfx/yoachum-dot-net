@@ -1,12 +1,14 @@
+<?php /** @var $alert \App\Library\Alerts\AlertAbstract */ ?>
 <!DOCTYPE html>
 <html lang="en" class="js">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Yoachum.net</title>
+    <title>Stephen Yoachum</title>
 
     <link rel="icon" href="/favicon.ico" type="image/png" sizes="16x16" />
+
 
     <link
             rel="stylesheet"
@@ -14,6 +16,9 @@
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossorigin="anonymous" />
 
+    @if(0)
+        <link rel="stylesheet"  href="/styles/bootstrap-4.css"/>
+    @endif
     <link rel="stylesheet" href="/styles/site.css" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -22,7 +27,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     @if(0)
     <!-- Google Analytics -->
     <script>
@@ -41,8 +46,24 @@
 <body>
 <div class="sy-wrap">
     @include('bootstrap-4.header')
-
     <div class="sy-content">
+        @if(session()->has('alert'))
+            <div class="container">
+                @php($alert = session()->get('alert'))
+                <div class="alert alert-{{ $alert->getType() }} alert-dismissible fade show">
+                    <strong>{{ $alert->getStrong() }}</strong>
+                    {{ $alert->getmessage() }}
+                    @if($link = $alert->getLink())
+                    <a href="{{ $link->getHref() }}" class="alert-link">{{ $link->getGet() }}</a>
+                    @endif
+                    @if($alert->isDismissible())
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    @endif
+                </div>
+            </div>
+        @endif
         @yield('content')
     </div>
     @include('bootstrap-4.footer')
@@ -65,7 +86,7 @@
         crossorigin="anonymous"></script>
 
 <script src="/scripts/holder.js"></script>
-
+<script src="/scripts/psy.js"></script>
 
 @yield('script')
 

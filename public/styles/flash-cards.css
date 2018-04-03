@@ -1,0 +1,100 @@
+.sy-content {                       /*   provide centering   */
+    align-items: center;            /* ********************* */
+    justify-content: center;        /* ********************* */
+}                                   /* ********************* */
+
+.psy-eq {
+    min-height: 80%;
+    font-size: 6em;
+    font-weight: bold;
+}
+
+.psy-eq .card-text {
+    overflow: hidden;    /* retain floats */
+    padding: 20px;
+}
+
+.psy-answer {
+    clear: both;
+    border-top: 5px solid #000;
+    font-size: inherit !important;
+    text-align: right;
+}
+
+#psy-operator, .psy-operator {
+    float: left;
+}
+
+.psy-eq-lower {
+    float:right;
+}
+
+.psy-start-screen {
+    font-size: 3em !important;
+    font-weight: bold;
+}
+
+.psy-start-screen .btn {
+    font-size: .5em;
+    font-weight: bold;
+    padding: .5em .5em;
+}
+
+#psy-results {
+    font-size:   18px;
+    font-weight: bold;
+}
+
+#psy-results .card {
+    display: inline-block;
+    width: 125px;
+    margin: 5px 5px;
+    font-size:   18px;
+}
+
+#psy-results .card .card-body {
+    pointer-events: none;
+}
+
+#psy-results .card .card-text .psy-answer {
+    border-top: 1px solid #000;
+}
+
+#psy-results .card-text {
+    overflow: hidden; /* retain floats */
+}
+
+#psy-results .hint {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.strike-through {
+    text-decoration: line-through;
+}
+
+.psy-answer.danger, #psy-results .hint span {
+    color: red;
+}
+
+/*@media(max-width: 768px){*/
+    /*.psy-eq-mini {*/
+        /*max-width: 50%;*/
+        /*font-size: 32px;*/
+        /*font-weight: bold;*/
+    /*}*/
+/*}*/
+
+/*@media(min-width: 769px){*/
+    /*.psy-eq-mini {*/
+        /*max-width: 50%;*/
+        /*font-size: 18px;*/
+        /*font-weight: bold;*/
+    /*}*/
+/*}*/
+
+.psy-answer {
+}
+
+#psy-operator {
+}
