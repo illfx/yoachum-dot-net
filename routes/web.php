@@ -22,7 +22,7 @@ Route::get('/', function () {
 })->name('index');
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/blog', 'ArticleController@index')->name('blog');
+//Route::get('/blog', 'ArticleController@index')->name('blog');
 
 Route::get('/contact', function() {
     return view('contact');
@@ -48,15 +48,15 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout');
 
-Route::get('/articles', 'ArticleController@index');
-
-Route::get('/articles/create', 'ArticleController@create');
-Route::post('/articles/create', 'ActionController@store');
-
-Route::get('/articles/{article}', 'ArticleController@show');
-
-Route::delete('/articles/{article}', 'ArticleController@delete');
-Route::get('/articles/{article}/delete', 'ArticleController@delete');
+//Route::get('/articles', 'ArticleController@index');
+//
+//Route::get('/articles/create', 'ArticleController@create');
+//Route::post('/articles/create', 'ActionController@store');
+//
+//Route::get('/articles/{article}', 'ArticleController@show');
+//
+//Route::delete('/articles/{article}', 'ArticleController@delete');
+//Route::get('/articles/{article}/delete', 'ArticleController@delete');
 
 
 Route::get('/math', 'MathController@index')->name('math');
