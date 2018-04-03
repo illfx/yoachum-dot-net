@@ -27,7 +27,7 @@ class HeaderComposer
     public function __construct()
     {
         $this->items = [
-            new Link('Blog', '/blog'),
+//            new Link('Blog', '/blog'),
             new Dropdown('Math', [
                 new Link('Flash Cards', url('/math/flash-cards')),
                 new Link('Times Table', url('/math/times-table')),
