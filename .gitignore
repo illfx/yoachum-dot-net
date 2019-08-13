@@ -12,3 +12,6 @@ npm-debug.log
 yarn-error.log
 .env
 composer.phar
+/public/webfonts/
+/public/styles/fontawesome-all.min.css
+/public/images/

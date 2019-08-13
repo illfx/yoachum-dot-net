@@ -19,6 +19,7 @@
     @if(0)
         <link rel="stylesheet"  href="/styles/bootstrap-4.css"/>
     @endif
+    <link rel="stylesheet" href="/styles/fontawesome-all.min.css" />
     <link rel="stylesheet" href="/styles/site.css" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -70,7 +71,7 @@
 </div>
 </body>
 
-<script defer src="/scripts/fontawesome-all.min.js"></script>
+{{--<script defer src="/scripts/fontawesome-all.min.js"></script>--}}
 
 <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
